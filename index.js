@@ -3,14 +3,15 @@
 // todo -------------------------- IMPORTS -----------------------------------
 
 import { changerpage, } from "./modules/fonctions.js"
-import { recits } from "./modules/variables.js"
-const genius = $
+import { recits, imagespixelart, son } from "./modules/variables.js"
+export const genius = $
 
 // todo -------------------------- MAIN -----------------------------------
 
 export let pageactuelle = "acceuil"
 export let contenupagehtml = document.querySelector("#contenupagehtml")
-
+let blockpixelactif = false
+let countimgpixel = 1
 // todo -------------------------- EVENTS -----------------------------------
 
 // todo--------- events menu
@@ -26,7 +27,22 @@ genius.event("#articles", "mousedown", () => {
 genius.event("#creations", "mousedown", () => {
     pageactuelle = "creations"
     changerpage("creations", contenupagehtml)
+    // todo-------- events blockpixelart
+    genius.event("#blockpixelart", "mousedown", () => {
+        let img = genius.element("img", ".imgpixel")
+        contenupagehtml.appendChild(img)
+        img.src = `./ressources/img/pixelart/${countimgpixel}.png`
+        document.querySelector("#blockpixelart").style.pointerEvents = "none"
+        document.querySelector("#blockpixelart").style.opacity = 0
+
+
+    })
 })
+
+
+
+
+
 
 // todo-------- events logo powered
 genius.event("#logoinfo", "mousedown", () => {
@@ -35,4 +51,22 @@ genius.event("#logoinfo", "mousedown", () => {
 
 
 // todo -------------------------- EVENTS GLOBAL -----------------------------------
+
+
+onload = () => {
+    particlesJS.load('particles', 'json.json')
+}
+
+// todo -------------------------- EVENTS SON -----------------------------------
+
+let li = document.querySelectorAll("li")
+li.forEach(element => {
+    /* console.log(element.nodeName); */
+    element.addEventListener("click", function () {
+        son.boutton.volume = 0.1
+        son.boutton.play()
+    });
+});
+
+
 

@@ -1,6 +1,6 @@
 // todo -------------------------- IMPORTS -----------------------------------
 import { pageacceuil, pagearticles, pagecreations } from "./pages.js"
-import { pageactuelle, contenupagehtml } from "../index.js"
+import { pageactuelle, contenupagehtml, genius } from "../index.js"
 import { recits } from "./variables.js"
 
 // todo -------------------------- MAIN -----------------------------------
@@ -15,12 +15,11 @@ export function changerpage(page, element) {
         console.log('articles');
         div.innerHTML = pagearticles
         recits.forEach(element => {
-            let p = document.createElement("p")
-            p.id = "titrerecits"
+            let p = genius.element('p', '.titrerecits')
             p.textContent = element.titre
             contenupagehtml.appendChild(p)
         });
-        
+
 
     }
     else if (page === "creations") {

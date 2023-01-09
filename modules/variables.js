@@ -14,3 +14,10 @@ export const recits =
     { titre: "Quatrième article", contenu: "hello c'est mon premier article. On va essayer de faire un affichage cool de cet article." },
     { titre: "Quatrième article", contenu: "hello c'est mon premier article. On va essayer de faire un affichage cool de cet article." },
     { titre: "Quatrième article", contenu: "hello c'est mon premier article. On va essayer de faire un affichage cool de cet article." },]
+
+export const imagespixelart = ["./ressources/img/pixelart/1.png", "./ressources/img/pixelart/1.png", "./ressources/img/pixelart/1.png", "./ressources/img/pixelart/1.png"]
+
+export const son =
+{
+    boutton: new Audio("../ressources/sons/boutton.mp3"),
+}

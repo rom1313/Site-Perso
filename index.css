@@ -11,7 +11,25 @@
 
 
 /* todo------------------- ANIMATIONS ---------- */
+@keyframes clignotement {
+    from {
+        opacity: 0.2;
+    }
 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes apparitionmenu {
+    from {
+        left: -80px;
+    }
+
+    to {
+        left: 90px;
+    }
+}
 
 /* todo------------------- BASICS CONFIG ---------- */
 html,
@@ -32,14 +50,13 @@ html {
 }
 
 body {
-    background-color: blue;
     height: 100%;
     width: 100%;
 
 }
 
 
-/* todo----------------------- logo ---------------*/
+/* todo----------------------- logo site---------------*/
 
 #logo {
     position: absolute;
@@ -47,7 +64,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    animation: briller 1.5s 4 alternate ease-in-out;
+    animation: clignotement 0.8s 3 alternate ease-in-out;
 }
 
 /* todo----------------------- Menu ------------- */
@@ -55,15 +72,16 @@ body {
 #blockmenu {
     position: absolute;
     top: 35vh;
-    left: 70px;
+    left: 90px;
     transform: translate(-50%, -50%);
+    animation: apparitionmenu 2s;
 
 }
 
 li {
     list-style: none;
     background-color: rgb(0, 0, 0);
-    box-shadow: 1px 1px 5px rgb(0, 232, 228);
+    box-shadow: 0px 0px 5px rgb(0, 232, 228);
     border-radius: 5px;
     text-align: center;
     padding: 5px;
@@ -76,7 +94,7 @@ li:hover {
 
     color: rgb(234, 90, 0);
 
-    box-shadow: 1px 1px 5px rgb(0, 232, 228) inset;
+    box-shadow: 0px 0px 5px rgb(0, 232, 228) inset;
 }
 
 
@@ -87,18 +105,19 @@ li:hover {
     flex-direction: column;
 }
 
+/* todo------------------- contenu page ---------- */
 #contenupagehtml {
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(5, 5, 5);
+    background-color: rgb(9, 9, 9);
     text-align: center;
     width: 60vw;
     height: 60vh;
     border-radius: 15px;
-    border: solid 1px black;
-    box-shadow: 1px 1px 5px rgb(0, 232, 228);
+
+    box-shadow: 0px 0px 5px rgb(0, 232, 228);
     overflow: scroll;
     display: flex;
     justify-content: baseline;
@@ -110,8 +129,8 @@ li:hover {
 
 #contenupagehtml p {
 
-    color: white;
 
+    color: rgb(234, 90, 0);
 }
 
 #contenupagehtml::-webkit-scrollbar {
@@ -119,17 +138,75 @@ li:hover {
     /* for Chrome, Safari, and Opera */
 }
 
-#titrerecits {
-    background-color: aqua;
+/* todo------------------- RECITS ---------- */
+
+.titrerecits {
+    background-color: rgb(53, 53, 53);
     border-radius: 5px;
-    padding: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     width: fit-content;
+
 }
 
 #titrerecits:hover {
     background-color: rgb(47, 255, 0);
 
 }
+
+/* todo------------------- CREATIONS ---------- */
+
+#blockcreations {
+    margin-top: 30px;
+    
+    display: flex;
+}
+
+#blockcreations div {
+    background-color: brown;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.imgpixel {
+    z-index: 3;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+
+
+#flechedroitepixel {
+
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 90%;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px aqua;
+    border-radius: 90%;
+    animation: clignotement 1s infinite alternate linear;
+}
+
+#flechegauchepixel {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 10%;
+    box-shadow: 0px 0px 5px aqua;
+    border-radius: 90%;
+    animation: clignotement 1s infinite alternate linear;
+}
+
+/* todo------------------- BAS DU SITE ---------- */
 
 #infosite {
     display: flex;
@@ -150,15 +227,16 @@ li:hover {
 }
 
 #infosite img {
-    width: 80px;
+    width: 100px;
     height: 40%;
     cursor: pointer;
+
 
 }
 
 #infosite p {
     font-size: 8px;
     color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
 
 }
